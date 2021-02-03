@@ -6,7 +6,7 @@ const HTML_START = '''
 	<style>
 		body {
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 10px;
+      font-size: 12px;
     }
     .tasks-table {
       display: grid;
