@@ -1,0 +1,121 @@
+<html>
+<head>
+	<title>Planning</title>
+
+	<style>
+		body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+    }
+    .tasks-table {
+      display: grid;
+      grid-template-columns: repeat(5, max-content) auto;
+    }
+    .task-wrapper {
+      display: contents;
+    }
+    .task-wrapper > div {
+      padding: 0.2em;
+      border: 1px solid #dddddd;
+      background-color: #eeeeee;
+    }
+    .separator {
+      grid-column: 1/-1;
+    }
+    .task-level0 > div {
+      font-weight: bold;
+    }
+    .finished {
+      color: #3465a4;
+    }
+    .header {
+      display: contents;
+    }
+    .header > div {
+      padding: 0.2em;
+      font-weight: bold;
+    }
+	</style>
+
+</head>
+
+<body>
+
+<div class="tasks-table">
+  <div class="header">
+    <div>Task</div>
+    <div>Status</div>
+    <div>Start</div>
+    <div>End</div>
+    <div>Priority</div>
+    <div>Description</div>
+  </div>
+<div class="separator">&nbsp;</div>
+  <div class="task-wrapper pending task-level0">
+    <div>Internal checklist</div>
+    <div>pending</div>
+    <div></div>
+    <div></div>
+    <div>high</div>
+    <div style="font-weight: normal;"></div>
+  </div>
+  <div class="task-wrapper finished task-level1">
+    <div>When to show 'extra questions'</div>
+    <div>finished</div>
+    <div></div>
+    <div></div>
+    <div>med</div>
+    <div style="font-weight: normal;">When the user has answered all the previously, an alert pops up.</div>
+  </div>
+  <div class="task-wrapper finished task-level1">
+    <div>When to show Start a new dialog</div>
+    <div>finished</div>
+    <div></div>
+    <div></div>
+    <div>med</div>
+    <div style="font-weight: normal;">The default is 30 minutes.</div>
+  </div>
+  <div class="task-wrapper notstarted task-level2">
+    <div>- Task level 3</div>
+    <div>notstarted</div>
+    <div></div>
+    <div></div>
+    <div>low</div>
+    <div style="font-weight: normal;"></div>
+  </div>
+<div class="separator">&nbsp;</div>
+  <div class="task-wrapper notstarted task-level0">
+    <div>Create UI</div>
+    <div>notstarted</div>
+    <div>2021-01-18</div>
+    <div>2021-02-05</div>
+    <div>med</div>
+    <div style="font-weight: normal;">The walk-through allows the user to get the experience of the app interaction.</div>
+  </div>
+  <div class="task-wrapper finished task-level1">
+    <div>Splash screen + timeout</div>
+    <div>finished</div>
+    <div></div>
+    <div></div>
+    <div>med</div>
+    <div style="font-weight: normal;"></div>
+  </div>
+  <div class="task-wrapper finished task-level1">
+    <div>Setup/configuration</div>
+    <div>finished</div>
+    <div></div>
+    <div></div>
+    <div>med</div>
+    <div style="font-weight: normal;">retain and save bed, name, server, language</div>
+  </div>
+  <div class="task-wrapper finished task-level2">
+    <div>- Improve video quality</div>
+    <div>finished</div>
+    <div></div>
+    <div></div>
+    <div>med</div>
+    <div style="font-weight: normal;"></div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{
+    "tasks": [
+        {
+            "title": "Internal checklist",
+            "status": "pending",
+            "priority": 2,
+            "tasks": [
+                {
+                    "title": "When to show 'extra questions'",
+                    "status": "finished",
+                    "priority": 1,
+                    "description": "When the user has answered all the previously, an alert pops up."
+                },
+                {
+                    "title": "When to show Start a new dialog",
+                    "status": "finished",
+                    "priority": 1,
+                    "description": "The default is 30 minutes.",
+                    "tasks": [
+                        {
+                            "title": "Task level 3",
+                            "status": "notstarted",
+                            "priority": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Create UI",
+            "status": "notstarted",
+            "start": "2021-01-18",
+            "end": "2021-02-05",
+            "priority": 1,
+            "description": "The walk-through allows the user to get the experience of the app interaction.",
+            "tasks": [
+                {
+                    "title": "Splash screen + timeout",
+                    "status": "finished",
+                    "priority": 1
+                },
+                {
+                    "title": "Setup/configuration",
+                    "status": "finished",
+                    "priority": 1,
+                    "description": "retain and save bed, name, server, language",
+                    "tasks": [
+                        {
+                            "title": "Improve video quality",
+                            "status": "finished",
+                            "priority": 1
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
