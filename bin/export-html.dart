@@ -5,13 +5,13 @@ import 'html-templates.dart';
 
 class ExportHTML {
   String _taskLine(Task task, int level) {
-    final p = (task?.priority ?? 1).clamp(0, 2);
+    final p = (task?.priority ?? 2).clamp(0, 3);
     return '''
   <div class="task-wrapper ${task.status} task-level$level">
     <div>${(level == 2) ? "- " : ""}${task.title}</div>
-    <div>${task.status}</div>
-    <div>${(task.start != null) ? task.start.toString() : ""}</div>
-    <div>${(task.end != null) ? task.end.toString() : ""}</div>
+    <div>${task.status ?? ""}</div>
+    <div>${task.start?.toString() ?? ""}</div>
+    <div>${task.end?.toString() ?? ""}</div>
     <div>${prio[p]}</div>
     <div style="font-weight: normal;">${task.description ?? ""}</div>
   </div>

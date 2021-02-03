@@ -1,4 +1,4 @@
-const prio = ['low', 'med', 'high'];
+const prio = ['opt', 'low', 'med', 'high'];
 
 class Task {
   Date start;
@@ -15,7 +15,7 @@ class Task {
     this.end,
     this.description,
     this.tasks,
-    this.priority = 1,
+    this.priority = 2,
   });
 }
 
