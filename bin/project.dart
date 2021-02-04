@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'export-excel.dart';
 import 'export-html.dart';
 import 'shared.dart';
 
@@ -50,14 +51,21 @@ void main(List<String> args) {
 
     loadPlanning(inFile);
 
-    final f = File(outFile);
-    var sink = f.openWrite();
+    if (outFile.endsWith('html')) {
+      final f = File(outFile);
+      var sink = f.openWrite();
 
-    final exportHTML = ExportHTML();
-    exportHTML.write(planning, sink);
+      final exportHTML = ExportHTML();
+      exportHTML.write(planning, sink);
 
-    sink.close();
+      sink.close();
+    } else if (outFile.endsWith('xlsx')) {
+      final exportExcel = ExportExcel();
+      exportExcel.write(planning, 'test.xlsx');
+    } else {
+      print('Please, specify either an html or xlsx file for output');
+    }
   } else {
-    print('Please, specify a JSON input file nd an output file');
+    print('Please, specify a JSON input file and an output file');
   }
 }
