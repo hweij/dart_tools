@@ -61,7 +61,7 @@ void main(List<String> args) {
       sink.close();
     } else if (outFile.endsWith('xlsx')) {
       final exportExcel = ExportExcel();
-      exportExcel.write(planning, 'test.xlsx');
+      exportExcel.write(planning, outFile);
     } else {
       print('Please, specify either an html or xlsx file for output');
     }

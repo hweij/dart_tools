@@ -7,17 +7,41 @@ import 'shared.dart';
 class ExportExcel {
   final normalStyle = CellStyle(
       backgroundColorHex: '#EEEEEE',
-      fontFamily: getFontFamily(FontFamily.Arial));
+      fontFamily: getFontFamily(FontFamily.Arial),
+      verticalAlign: VerticalAlign.Top);
   final boldStyle = CellStyle(
       backgroundColorHex: '#EEEEEE',
       fontFamily: getFontFamily(FontFamily.Arial),
-      bold: true);
+      bold: true,
+      verticalAlign: VerticalAlign.Top);
+  final normalFinished = CellStyle(
+      backgroundColorHex: '#EEEEEE',
+      fontColorHex: '#3465a4',
+      fontFamily: getFontFamily(FontFamily.Arial),
+      verticalAlign: VerticalAlign.Top);
+  final boldFinished = CellStyle(
+      backgroundColorHex: '#EEEEEE',
+      fontColorHex: '#3465a4',
+      fontFamily: getFontFamily(FontFamily.Arial),
+      bold: true,
+      verticalAlign: VerticalAlign.Top);
+  final descriptionStyle = CellStyle(
+      backgroundColorHex: '#EEEEEE',
+      fontFamily: getFontFamily(FontFamily.Arial),
+      textWrapping: TextWrapping.WrapText,
+      verticalAlign: VerticalAlign.Top);
   final titleStyle =
       CellStyle(fontFamily: getFontFamily(FontFamily.Arial), bold: true);
 
   void _writeTaskLine(Sheet sheet, int row, Task task, int level) {
     final p = (task?.priority ?? 2).clamp(0, 3);
-    final style = (level == 0) ? boldStyle : normalStyle;
+    final style = (task.status == 'finished')
+        ? (level == 0)
+            ? boldFinished
+            : normalFinished
+        : (level == 0)
+            ? boldStyle
+            : normalStyle;
     _writeCell(
         sheet, row, 0, style, (level == 2) ? '- ${task.title}' : task.title);
     _writeCell(sheet, row, 1, style, task.status ?? '');
